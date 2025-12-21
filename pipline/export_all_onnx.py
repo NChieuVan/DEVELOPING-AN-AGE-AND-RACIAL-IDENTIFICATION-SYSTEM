@@ -31,7 +31,7 @@ def export_classifier_onnx(classifier_pt_path, onnx_path):
     output_names=["age", "race"],  # đúng với multi-head của bạn
     dynamic_axes={"input": {0: "batch"}},
     do_constant_folding=True,
-    dynamo=False,              # 🔴 QUAN TRỌNG
+    dynamo=False,             
 )
     print(f"Classifier exported to: {onnx_path}")
 
