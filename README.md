@@ -52,7 +52,7 @@ DEVELOPING AN AGE AND RACIAL IDENTIFICATION SYSTEM/
 │   └── show.py                     # Visualization script
 │
 ├── data/                           # Dataset (nếu có)
-├── runs/                           # Kết quả predict và logs yolo
+├── runs/                           # Kết quả predict và logs yolo, video demo
 ├── requirements.txt                # Dependencies
 ├── fps_log.txt                     # FPS log file
 └── README.md                       # Documentation
