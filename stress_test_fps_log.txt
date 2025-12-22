@@ -1,6 +1,6 @@
 FPS Stress Test Result
 Window (sec): 300
-Samples: 2539
-Average FPS (End-to-End): 12.61
+Samples: 8080
+Average FPS (End-to-End): 11.29
 Min FPS: 0.03
-Max FPS: 988.52
+Max FPS: 999.60

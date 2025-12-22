@@ -145,11 +145,11 @@ def classifier_thread():
             age, ac, race, rc = clf(face)
             with cls_lock:
                 cls_cache[tid] = {
-                    "age": age,
-                    "age_conf": ac,
-                    "race": race,
-                    "race_conf": rc,
-                    "ts": time.time()
+                "age": AGE_CLASSES[age],          # string
+                "age_conf": ac,
+                "race": RACE_CLASSES[race],        # string
+                "race_conf": rc,
+                "ts": time.time()
                 }
         except:
             pass
@@ -209,7 +209,7 @@ def detect_track_draw_thread():
                 cached = cls_cache.get(tid)
             label = f"ID:{tid}"
             if cached: 
-                label += f" Age:{RACE_CLASSES[cached['age']]} Conf:{cached['age_conf']:.2f}  | Race:{RACE_CLASSES[cached['race']]} Conf:{cached['race_conf']:.2f}"
+                label += f" Age:{cached['age']} Conf:{cached['age_conf']:.2f}  | Race:{cached['race']} Conf:{cached['race_conf']:.2f}"
             cv2.rectangle(frame,(x1,y1),(x2,y2),(0,255,0),2)
             cv2.putText(frame,label,(x1,max(0,y1-6)),
                         cv2.FONT_HERSHEY_SIMPLEX,0.45,(0,255,0),1)
